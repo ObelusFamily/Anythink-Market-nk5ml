@@ -4,8 +4,6 @@ import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
-const ting = process.env.PUBLIC_URL + '/verified_seller.svg';
-
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -56,7 +54,7 @@ const ItemPreview = (props) => {
               className="user-pic rounded-circle pr-1"
             />
           </Link>
-          {item.seller.isVerified && <><img src={ting} alt={item.seller.username} /> TOP SELLER</>}
+          {item.seller.isVerified && <><img src='verified_seller.svg' alt={item.seller.username} /> TOP SELLER</>}
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
           </button>
